@@ -11,4 +11,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select departmentID , departmentName from departments
 	</select>
 
+	<select id="getDoctorListByDepartmentID" parameterType="String" resultType="entity.Doctor">
+		select dID , dName from doctors where departmentID=#{departmentID}
+	</select>
+
+	<select id="getUserAllIfmByUID" parameterType="String" resultType="entity.User">
+		select uID , uName , uTel , status from users where uID=#{uID}
+	</select>
 </mapper>

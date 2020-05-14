@@ -11,6 +11,7 @@
     <title>User Page</title>
 </head>
 <body>
-
+    <a href="/hospitalProject/user/test/getDepartmentList">获取科室列表</a>
+    <a href="/hospitalProject/user/test/getUserAllIfmByUID?uID=${requestScope.uID}">获取全部信息</a>
 </body>
 </html>

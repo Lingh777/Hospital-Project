@@ -4,6 +4,7 @@ public class User {
     private String uID;
     private String uName;
     private String uPwd;
+    private String uTel;
     private int status;
 
     public String getuID() {
@@ -36,5 +37,13 @@ public class User {
 
     public void setStatus(int status) {
         this.status = status;
+    }
+
+    public String getuTel() {
+        return uTel;
+    }
+
+    public void setuTel(String uTel) {
+        this.uTel = uTel;
     }
 }
