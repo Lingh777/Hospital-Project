@@ -24,13 +24,13 @@ SSM + MySql + Maven + Tomcat
 | --- | --- | --- | --- |
 
 ### 医生表(doctors)
-| dID | dPwd | dName | departmentID(科室ID) | dTel | date | introduction |
+| dID | dPwd | dName | departmentID | dTel | date | introduction |
 | --- | --- | --- | --- | --- | --- | --- |
 
 ### 科室表(departments)
-| departmentID(科室ID) | departmentName(科室名) |
+| departmentID | departmentName) |
 | --- | --- |
 
 ### 预约单表(appointments)
-| appointmentID(预约id) | uID | dID | date |
+| appointmentID | uID | dID | date |
 | --- | --- | --- | --- |
