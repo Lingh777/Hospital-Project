@@ -5,7 +5,6 @@ public class User {
     private String uName;
     private String uPwd;
     private String uTel;
-    private int status;
 
     public String getuID() {
         return uID;
@@ -29,14 +28,6 @@ public class User {
 
     public void setuPwd(String uPwd) {
         this.uPwd = uPwd;
-    }
-
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
     }
 
     public String getuTel() {

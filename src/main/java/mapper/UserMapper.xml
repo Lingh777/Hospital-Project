@@ -12,10 +12,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 
 	<select id="getDoctorListByDepartmentID" parameterType="String" resultType="entity.Doctor">
-		select dID , dName from doctors where departmentID=#{departmentID}
+		select dID , dName , date from doctors where departmentID=#{departmentID}
 	</select>
 
 	<select id="getUserAllIfmByUID" parameterType="String" resultType="entity.User">
-		select uID , uName , uTel , status from users where uID=#{uID}
+		select uID , uPwd , uName , uTel from users where uID=#{uID}
 	</select>
+
+	<update id="updateUserIfm" parameterType="entity.User">
+		update users set uName=#{uName} , uTel=#{uTel} where uID=#{uID}
+	</update>
+
+	<update id="updateUPwd" parameterType="entity.User">
+		update users set uPwd=#{uPwd} where uID=#{uID}
+	</update>
+
+
 </mapper>

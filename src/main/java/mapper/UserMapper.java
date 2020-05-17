@@ -11,4 +11,6 @@ public interface UserMapper {
 	User getUserAllIfmByUID(String uID);
 	List<Department> getDepartmentList();
 	List<Doctor> getDoctorListByDepartmentID(String departmentID);
+	void updateUserIfm(User user);
+	void updateUPwd(User user);
 }

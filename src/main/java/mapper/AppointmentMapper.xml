@@ -6,4 +6,16 @@
     <select id="getAppointmentsByDID" parameterType="String" resultType="entity.Appointment">
 		select appointmentID , uID , date from appointments where dID=#{dID}
 	</select>
+
+    <insert id="makeAppointment" parameterType="Map">
+		insert into appointments (appointmentID,uID,dID,date) values (#{appointmentID},#{uID},#{dID},#{date})
+	</insert>
+
+	<select id="getAppointmentsByUID" parameterType="String" resultType="entity.Appointment">
+		select appointmentID , dID , date from appointments where uID=#{uID}
+	</select>
+
+	<delete id="deleteAppointment" parameterType="String">
+		delete from appointments where appointmentID=#{appointmentID};
+	</delete>
 </mapper>
