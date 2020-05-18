@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-    <bean id="userService" class="service.impl.UserService"></bean>
-    <bean id="doctorService" class="service.impl.DoctorService"></bean>
+    <bean id="userService" class="service.impl.UserService"/>
+    <bean id="doctorService" class="service.impl.DoctorService"/>
 
 </beans>

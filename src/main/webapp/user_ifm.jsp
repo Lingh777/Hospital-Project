@@ -14,6 +14,5 @@
 ${requestScope.user.uName}<br>
 ${requestScope.user.uID}<br>
 ${requestScope.user.uTel}<br>
-${requestScope.user.status}<br>
 </body>
 </html>

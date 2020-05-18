@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 import service.impl.DoctorService;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+//后端接口
 @Controller
 @CrossOrigin
 @RequestMapping("doctor")
@@ -24,36 +24,6 @@ public class DoctorController {
     @Qualifier("doctorService")
     private DoctorService doctorService;
 
-    //测试方法
-    @RequestMapping("test/login")
-    public ModelAndView testCheckDoctor(Doctor doctor){
-        int result = doctorService.checkDoctor(doctor);
-        if(result == 1) {
-            ModelAndView mv = new ModelAndView("doctorPage");
-            mv.addObject("dID",doctor.getdID());
-            return mv;
-        }
-        return new ModelAndView("error");
-    }
-
-    @RequestMapping("test/getAppointmentsByDID")
-    public ModelAndView testGetAppointmentsByDID(@RequestParam("dID") String dID){
-        ModelAndView mv = new ModelAndView("doctor_appointments");
-        List<Appointment> appointments = doctorService.getAppointmentsByDID(dID);
-        mv.addObject("appointments",appointments);
-        return mv;
-    }
-
-    @RequestMapping("test/getDoctorAllIfmByDID")
-    public ModelAndView testGetDoctorAllIfmByDID(@RequestParam("dID") String dID){
-        ModelAndView mv = new ModelAndView(("doctor_ifm"));
-        Doctor doctor = doctorService.getDoctorAllIfmByDID(dID);
-        mv.addObject("doctor" , doctor);
-        return mv;
-    }
-
-
-    //后端接口
     @RequestMapping("login")
     @ResponseBody
     public Map checkDoctor(@RequestParam("dID") String dID,@RequestParam("dPwd") String dPwd){
