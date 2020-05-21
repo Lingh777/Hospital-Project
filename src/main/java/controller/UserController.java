@@ -31,10 +31,7 @@ public class UserController {
 
     @RequestMapping(value = "login")
     @ResponseBody
-    public Map checkUser(@RequestParam("uID") String uID, @RequestParam("uPwd") String uPwd){
-        User user = new User();
-        user.setuID(uID);
-        user.setuPwd(uPwd);
+    public Map checkUser(User user){
         Map<String,Integer> resultMap = new HashMap<>();
         int count = userService.checkUser(user);
         if(count == 1){
@@ -83,14 +80,16 @@ public class UserController {
 
     @RequestMapping("makeAppointment")
     @ResponseBody
-    public Map makeAppointment(@RequestParam("uID") String uID , @RequestParam("dID") String dID , @RequestParam("date") String date){
+    public Map makeAppointment(@RequestParam("uID") String uID , @RequestParam("dID") String dID , @RequestParam("date") String date , @RequestParam("description") String description){
         String appointmentID = uID+dID+date;
         System.out.println(appointmentID);
-        Map<String,String> sqlParams = new HashMap<>();
+        Map<String,Object> sqlParams = new HashMap<>();
         sqlParams.put("appointmentID",appointmentID);
         sqlParams.put("uID",uID);
         sqlParams.put("dID",dID);
         sqlParams.put("date",date);
+        sqlParams.put("description",description);
+        sqlParams.put("status",0);
         int result = userService.makeAppointment(sqlParams);
         Map<String,Integer> resultMap = new HashMap<>();
         resultMap.put("result",result);

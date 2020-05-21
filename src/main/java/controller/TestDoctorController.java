@@ -16,7 +16,7 @@ import java.util.List;
 //测试方法
 @Controller
 @CrossOrigin
-@RequestMapping("doctor/tset")
+@RequestMapping("doctor/test")
 public class TestDoctorController {
     @Autowired
     @Qualifier("doctorService")

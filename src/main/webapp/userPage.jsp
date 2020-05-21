@@ -13,5 +13,6 @@
 <body>
     <a href="/hospitalProject/user/test/getDepartmentList">获取科室列表</a>
     <a href="/hospitalProject/user/test/getUserAllIfmByUID?uID=${requestScope.uID}">获取全部信息</a>
+    <a href="/hospitalProject/user/getAppointmentsByUID?uID=${requestScope.uID}">获取预约信息</a>
 </body>
 </html>

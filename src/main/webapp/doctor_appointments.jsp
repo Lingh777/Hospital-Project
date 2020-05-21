@@ -13,7 +13,7 @@
 </head>
 <body>
     <c:forEach items="${requestScope.appointments}" var="appointment">
-        <p>${appointment.appointmentID}&nbsp;&nbsp;${appointment.uID}&nbsp;&nbsp;${appointment.date}</p>
+        <p>${appointment.appointmentID}&nbsp;&nbsp;${appointment.uID}&nbsp;&nbsp;${appointment.date}&nbsp;&nbsp;${appointment.description}</p>
     </c:forEach>
 </body>
 </html>

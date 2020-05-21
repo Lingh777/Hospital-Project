@@ -42,4 +42,26 @@ public class DoctorService implements IDoctorService {
         return doctor;
     }
 
+    @Override
+    public int acceptAppointment(String appointmentID) {
+        try{
+            appointmentMapper.acceptAppointment(appointmentID);
+        }catch (Exception e){
+            e.printStackTrace();
+            return 0;
+        }
+        return 1;
+    }
+
+    @Override
+    public int finishAppointment(String appointmentID) {
+        try{
+            appointmentMapper.finishAppointment(appointmentID);
+        }catch (Exception e){
+            e.printStackTrace();
+            return 0;
+        }
+        return 1;
+    }
+
 }

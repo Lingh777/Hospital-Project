@@ -10,4 +10,6 @@ public interface AppointmentMapper {
     void makeAppointment(Map params);
     List<Appointment> getAppointmentsByUID(String uID);
     void deleteAppointment(String appointmentID);
+    void acceptAppointment(String appointmentID);
+    void finishAppointment(String appointmentID);
 }

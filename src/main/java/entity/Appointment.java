@@ -4,7 +4,10 @@ public class Appointment {
     private String appointmentID;
     private String uID;
     private String dID;
+    private String dName;
     private String date;
+    private String description;
+    private int status;
 
     public String getAppointmentID() {
         return appointmentID;
@@ -36,5 +39,29 @@ public class Appointment {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public String getdName() {
+        return dName;
+    }
+
+    public void setdName(String dName) {
+        this.dName = dName;
     }
 }

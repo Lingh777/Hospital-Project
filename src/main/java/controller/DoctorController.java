@@ -26,11 +26,7 @@ public class DoctorController {
 
     @RequestMapping("login")
     @ResponseBody
-    public Map checkDoctor(@RequestParam("dID") String dID,@RequestParam("dPwd") String dPwd){
-        //System.out.println(dID+"\t"+dPwd);
-        Doctor doctor = new Doctor();
-        doctor.setdID(dID);
-        doctor.setdPwd(dPwd);
+    public Map checkDoctor(Doctor doctor){
         Map resultMap = new HashMap();
         int count = doctorService.checkDoctor(doctor);
         if(count == 1){
@@ -57,6 +53,24 @@ public class DoctorController {
         Map resultMap = new HashMap();
         Doctor doctor = doctorService.getDoctorAllIfmByDID(dID);
         resultMap.put("doctor",doctor);
+        return resultMap;
+    }
+
+    @RequestMapping("acceptAppointment")
+    @ResponseBody
+    public Map acceptAppointment(@RequestParam("appointmentID") String appointmentID){
+        Map resultMap = new HashMap();
+        int result = doctorService.acceptAppointment(appointmentID);
+        resultMap.put("result",result);
+        return resultMap;
+    }
+
+    @RequestMapping("finishAppointment")
+    @ResponseBody
+    public Map finishAppointment(@RequestParam("appointmentID") String appointmentID){
+        Map resultMap = new HashMap();
+        int result = doctorService.finishAppointment(appointmentID);
+        resultMap.put("result",result);
         return resultMap;
     }
 }

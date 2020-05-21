@@ -4,18 +4,27 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper.AppointmentMapper">
     <select id="getAppointmentsByDID" parameterType="String" resultType="entity.Appointment">
-		select appointmentID , uID , date from appointments where dID=#{dID}
+		select appointmentID , uID , date , description , status from appointments where dID=#{dID} and (status=0 or status=1)
 	</select>
 
     <insert id="makeAppointment" parameterType="Map">
-		insert into appointments (appointmentID,uID,dID,date) values (#{appointmentID},#{uID},#{dID},#{date})
+		insert into appointments (appointmentID,uID,dID,date,description,status) values (#{appointmentID},#{uID},#{dID},#{date},#{description},#{status})
 	</insert>
 
 	<select id="getAppointmentsByUID" parameterType="String" resultType="entity.Appointment">
-		select appointmentID , dID , date from appointments where uID=#{uID}
+		select appointmentID , appointments.dID , dname , appointments.date , description , status from appointments , doctors where appointments.dID = doctors.dID and uID=#{uID}
 	</select>
 
 	<delete id="deleteAppointment" parameterType="String">
-		delete from appointments where appointmentID=#{appointmentID};
+		delete from appointments where appointmentID=#{appointmentID}
 	</delete>
+
+	<update id="acceptAppointment" parameterType="String">
+		update appointments set status=1 where appointmentID=#{appointmentID}
+	</update>
+
+	<update id="finishAppointment" parameterType="String">
+		update appointments set status=-1 where appointmentID=#{appointmentID}
+	</update>
+
 </mapper>

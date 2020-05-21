@@ -15,6 +15,7 @@
         uID:<input type="text" name="uID"><br>
         dID:<input type="text" name="dID"><br>
         date:<input type="text" name="date"><br>
+        description:<input type="text" name="description">
         <input type="submit" value="submit">
     </form>
 </body>

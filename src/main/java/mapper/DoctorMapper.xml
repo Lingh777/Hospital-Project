@@ -8,6 +8,6 @@
 	</select>
 
 	<select id="getDoctorAllIfmByDID" parameterType="String" resultType="entity.Doctor">
-		select dName , dID , departmentName , date , introduction from doctors , departments where doctors.departmentID = departments.departmentID and dID=#{dID}
+		select dName , dID , departmentName , introduction from doctors , departments where doctors.departmentID = departments.departmentID and dID=#{dID}
 	</select>
 </mapper>

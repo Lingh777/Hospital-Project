@@ -9,6 +9,8 @@ public interface IDoctorService {
     int checkDoctor(Doctor doctor);
     List<Appointment> getAppointmentsByDID(String dID);
     Doctor getDoctorAllIfmByDID(String dID);
+    int acceptAppointment(String appointmentID);
+    int finishAppointment(String appointmentID);
 }
 
 
